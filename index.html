@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="video.html">Videos</a></li>
+            <li><a href="#policy">Policy</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+<section id="home">
+</section>
+
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Swiss watch manufacturing is renowned for its precision, craftsmanship, and tradition, and an integrated and independent Swiss watch manufacture is a company that controls every stage of the watch production process. This type of company designs, engineers, produces, and assembles watches entirely in-house, without outsourcing significant parts of the process. This level of independence allows the brand to maintain high levels of quality, innovation, and exclusivity. </p>
+    </section>
+
+    <!-- Products Section -->
+<section id="products">
+    <h2>Our Products</h2>
+    <div class="product-list">
+        <div class="product-item">
+            <img src="product1.jpg" alt="Product 1" class="product-image">
+            <h3>Product 1</h3>
+            <p>Description of Product 1</p>
+            <p class="price">$89.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item">
+            <img src="product2.jpg" alt="Product 2" class="product-image">
+            <h3>Product 2</h3>
+            <p>Description of Product 2</p>
+            <p class="price">$59.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Add more products as needed -->
+    </div>
+</section>
+
+
+    <!-- Videos Section -->
+    <section id="videos">
+        <h2>Product Videos</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwnXW_7fzk0?si=IeOt9ZDGh-zNa-om" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Downloadable Policy Section -->
+    <section id="policy">
+        <h2>Policy</h2>
+        <p>Download our company policy:</p>
+        <a href="policy.pdf" download>Download Policy PDF</a>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="/submit" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+</html>

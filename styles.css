@@ -1,0 +1,193 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+nav {
+    background-color: #008080; /* Green color as in the banner image */
+    padding: 10px;
+}
+
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+.navbar li a:hover {
+    background-color: #006666; /* Darker green on hover */
+    color: white;
+}
+
+/* Sections */
+section {
+    padding: 20px;
+}
+
+#home h1, #about h2, #products h2, #contact h2, #videos h2, #policy h2 {
+    text-align: center;
+    background: linear-gradient(to right, gray, #00cc99); /* Gradient from gray to green */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes gradient visible on text */
+}
+
+/* Product Section */
+#products {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.product-item:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    background-color: #008080; /* Green button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-to-cart:hover {
+    background-color: #006666; /* Darker green hover */
+}
+
+/* Home Section */
+#home {
+    background-image: url('banner.png'); /* Replace 'banner.jpg' with your image file path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#home h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 20px;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input, form textarea, form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #575757;
+}
+
+/* Video Section */
+.video-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Policy Section */
+#policy {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#policy a {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+#policy a:hover {
+    background-color: #333;
+    color: white;
+}
+#about {
+    text-align: center; /* Centers text horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+    justify-content: center; /* Centers the content vertically */
+    height: 100vh; /* Optional: makes the section take up full viewport height */
+}
+
+#about h2, #about p {
+    max-width: 800px; /* Limits the width of the text for better readability */
+    margin: 0 auto; /* Ensures the content stays centered */
+    padding: 10px; /* Adds some space around the content */
+}
