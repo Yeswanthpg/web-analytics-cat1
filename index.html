@@ -13,21 +13,6 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PTCZRP4L"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GTM-PTCZRP4L');
-    </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Website</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6W8PNHQWD"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -36,6 +21,12 @@
         gtag('config', 'G-E6W8PNHQWD');
     </script>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <!-- Navigation Bar -->
     <nav>
         <ul class="navbar">
@@ -53,19 +44,19 @@
     <section id="products">
         <h2>Our Products</h2>
         <div class="product-list">
-            <div class="product-item">
-                <img src="product1.jpg" alt="Product 1" class="product-image">
+            <div class="product-item" data-product-id="SKU_12345">
+                <img src="product1.jpg" alt="Product 1" class="product-image" onclick="viewItemDetails('SKU_12345')">
                 <h3>Product 1</h3>
                 <p>Description of Product 1</p>
                 <p class="price">$89.99</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('SKU_12345', 1)">Add to Cart</button>
             </div>
-            <div class="product-item">
-                <img src="product2.jpg" alt="Product 2" class="product-image">
+            <div class="product-item" data-product-id="SKU_12346">
+                <img src="product2.jpg" alt="Product 2" class="product-image" onclick="viewItemDetails('SKU_12346')">
                 <h3>Product 2</h3>
                 <p>Description of Product 2</p>
                 <p class="price">$59.99</p>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('SKU_12346', 1)">Add to Cart</button>
             </div>
         </div>
     </section>
@@ -76,6 +67,7 @@
             <h2>Your Cart</h2>
             <ul id="cart-items-list"></ul>
             <p>Total: $<span id="cart-total">0.00</span></p>
+            <button id="checkout" onclick="initiateCheckout()">Checkout</button>
             <button id="close-cart">Close</button>
         </div>
     </div>
@@ -97,62 +89,65 @@
         </form>
     </section>
 
-    <div>Select an item</div>
-    <button>Select Items</button>
     <script>
-        gtag("event", "view_item_list", {
-            item_list_id: "related_products",
-            item_list_name: "Related products",
-            items: [{
-                item_id: "SKU_12345",
-                item_name: "Stan and Friends Tee",
-                affiliation: "Google Merchandise Store",
-                coupon: "SUMMER_FUN",
-                discount: 2.22,
-                index: 0,
-                item_brand: "Google",
-                item_category: "Apparel",
-                item_category2: "Adult",
-                item_category3: "Shirts",
-                item_category4: "Crew",
-                item_category5: "Short sleeve",
-                item_list_id: "related_products",
-                item_list_name: "Related Products",
-                item_variant: "green",
-                location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-                price: 10.01,
-                quantity: 3
-            }]
-        });
-    </script>
+        // Function to view item details
+        function viewItemDetails(productId) {
+            gtag("event", "view_item", {
+                items: [{
+                    item_id: productId,
+                    item_name: "Product Name", // Update with actual product name
+                    item_category: "Category", // Update with actual category
+                    price: 89.99 // Update with actual price
+                }]
+            });
+            console.log('Viewing details for:', productId);
+        }
 
-    <div>Order your items here</div>
-    <button>View Items</button>
-    <script>
-        gtag("event", "view_item_list", {
-            item_list_id: "related_products",
-            item_list_name: "Related products",
-            items: [{
-                item_id: "SKU_12345",
-                item_name: "Stan and Friends Tee",
-                affiliation: "Google Merchandise Store",
-                coupon: "SUMMER_FUN",
-                discount: 2.22,
-                index: 0,
-                item_brand: "Google",
-                item_category: "Apparel",
-                item_category2: "Adult",
-                item_category3: "Shirts",
-                item_category4: "Crew",
-                item_category5: "Short sleeve",
-                item_list_id: "related_products",
-                item_list_name: "Related Products",
-                item_variant: "green",
-                location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-                price: 10.01,
-                quantity: 3
-            }]
-        });
+        // Array to hold cart items
+        let cart = [];
+
+        // Function to add item to cart
+        function addToCart(productId, quantity) {
+            cart.push({ productId, quantity });
+            updateCart();
+            gtag("event", "add_to_cart", {
+                items: [{
+                    item_id: productId,
+                    quantity: quantity
+                }]
+            });
+            console.log('Added to cart:', productId);
+        }
+
+        // Function to update cart display
+        function updateCart() {
+            const cartItemsList = document.getElementById('cart-items-list');
+            const cartTotal = document.getElementById('cart-total');
+            cartItemsList.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Product ID: ${item.productId}, Quantity: ${item.quantity}`;
+                cartItemsList.appendChild(listItem);
+                total += item.quantity * 59.99; // Assuming fixed price for demonstration
+            });
+
+            cartTotal.textContent = total.toFixed(2);
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        // Function to initiate checkout
+        function initiateCheckout() {
+            gtag("event", "begin_checkout", {
+                items: cart.map(item => ({
+                    item_id: item.productId,
+                    quantity: item.quantity
+                }))
+            });
+            console.log('Checkout initiated');
+            // Redirect to checkout page or display checkout modal
+        }
     </script>
 </body>
 </html>
