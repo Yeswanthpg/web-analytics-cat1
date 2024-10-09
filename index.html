@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PTCZRP4L');</script>
-<!-- End Google Tag Manager -->
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PTCZRP4L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'GTM-PTCZRP4L');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Website</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PTCZRP4L');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6W8PNHQWD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-E6W8PNHQWD');
+        gtag('config', 'GTM-PTCZRP4L');
+    </script>
 </head>
 <body>
-   <script>
-      /**
-      *   The following event is sent when the page loads. You could
-      *   wrap the event in a JavaScript function so the event is
-      *   sent when the user performs some action.
-      */
-      gtag('event', 'homepage', {
-        'app_name': 'myAppName',
-        'screen_name': 'Home'
-      });
-    </script> 
-    <!-- Navigation Bar -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTCZRP4L"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Navigation Bar -->
     <nav>
         <ul class="navbar">
@@ -51,36 +47,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav>
 
     <!-- Products Section -->
-<section id="products">
-    <h2>Our Products</h2>
-    <div class="product-list">
-        <div class="product-item">
-            <img src="product1.jpg" alt="Product 1" class="product-image">
-            <h3>Product 1</h3>
-            <p>Description of Product 1</p>
-            <p class="price">$89.99</p>
-            <button class="add-to-cart">Add to Cart</button>
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="product1.jpg" alt="Product 1" class="product-image">
+                <h3>Product 1</h3>
+                <p>Description of Product 1</p>
+                <p class="price">$89.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="product2.jpg" alt="Product 2" class="product-image">
+                <h3>Product 2</h3>
+                <p>Description of Product 2</p>
+                <p class="price">$59.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
         </div>
-        <div class="product-item">
-            <img src="product2.jpg" alt="Product 2" class="product-image">
-            <h3>Product 2</h3>
-            <p>Description of Product 2</p>
-            <p class="price">$59.99</p>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <!-- Add more products as needed -->
-    </div>
-</section>
+    </section>
 
     <!-- Cart Modal -->
-<div id="cart-modal" class="cart-modal">
-    <div class="cart-modal-content">
-        <h2>Your Cart</h2>
-        <ul id="cart-items-list"></ul>
-        <p>Total: $<span id="cart-total">0.00</span></p>
-        <button id="close-cart">Close</button>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <h2>Your Cart</h2>
+            <ul id="cart-items-list"></ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+            <button id="close-cart">Close</button>
+        </div>
     </div>
-</div>
 
     <!-- Contact Form Section -->
     <section id="contact">
@@ -98,47 +94,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <button type="submit">Submit</button>
         </form>
     </section>
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6W8PNHQWD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
-        gtag('config', 'G-E6W8PNHQWD');
-    </script>
-</head>
-<body>
+    <!-- View Item Event -->
     <div>Order your items here</div>
-    <button> View Items</button>
+    <button>View Items</button>
     <script>
- gtag("event", "view_item_list", {
-  item_list_id: "related_products",
-  item_list_name: "Related products",
-  items: [
-    {
-      item_id: "SKU_12345",
-      item_name: "Stan and Friends Tee",
-      affiliation: "Google Merchandise Store",
-      coupon: "SUMMER_FUN",
-      discount: 2.22,
-      index: 0,
-      item_brand: "Google",
-      item_category: "Apparel",
-      item_category2: "Adult",
-      item_category3: "Shirts",
-      item_category4: "Crew",
-      item_category5: "Short sleeve",
-      item_list_id: "related_products",
-      item_list_name: "Related Products",
-      item_variant: "green",
-      location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-      price: 10.01,
-      quantity: 3
-    }
-  ]
-});
+        gtag("event", "view_item_list", {
+            item_list_id: "related_products",
+            item_list_name: "Related products",
+            items: [
+                {
+                    item_id: "SKU_12345",
+                    item_name: "Stan and Friends Tee",
+                    affiliation: "Google Merchandise Store",
+                    coupon: "SUMMER_FUN",
+                    discount: 2.22,
+                    index: 0,
+                    item_brand: "Google",
+                    item_category: "Apparel",
+                    item_category2: "Adult",
+                    item_category3: "Shirts",
+                    item_category4: "Crew",
+                    item_category5: "Short sleeve",
+                    item_variant: "green",
+                    location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                    price: 10.01,
+                    quantity: 3
+                }
+            ]
+        });
     </script>
 </body>
 </html>
