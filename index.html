@@ -80,67 +80,6 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
 
             <button type="submit">Submit</button>
         </form>
-    </section>
 
-    <script>
-        // Function to view item details
-        function viewItemDetails(productId) {
-            gtag("event", "view_item", {
-                items: [{
-                    item_id: productId,
-                    item_name: "Product Name", // Update with actual product name
-                    item_category: "Category", // Update with actual category
-                    price: 89.99 // Update with actual price
-                }]
-            });
-            console.log('Viewing details for:', productId);
-        }
-
-        // Array to hold cart items
-        let cart = [];
-
-        // Function to add item to cart
-        function addToCart(productId, quantity) {
-            cart.push({ productId, quantity });
-            updateCart();
-            gtag("event", "add_to_cart", {
-                items: [{
-                    item_id: productId,
-                    quantity: quantity
-                }]
-            });
-            console.log('Added to cart:', productId);
-        }
-
-        // Function to update cart display
-        function updateCart() {
-            const cartItemsList = document.getElementById('cart-items-list');
-            const cartTotal = document.getElementById('cart-total');
-            cartItemsList.innerHTML = '';
-            let total = 0;
-
-            cart.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.textContent = `Product ID: ${item.productId}, Quantity: ${item.quantity}`;
-                cartItemsList.appendChild(listItem);
-                total += item.quantity * 59.99; // Assuming fixed price for demonstration
-            });
-
-            cartTotal.textContent = total.toFixed(2);
-            document.getElementById('cart-count').textContent = cart.length;
-        }
-
-        // Function to initiate checkout
-        function initiateCheckout() {
-            gtag("event", "begin_checkout", {
-                items: cart.map(item => ({
-                    item_id: item.productId,
-                    quantity: item.quantity
-                }))
-            });
-            console.log('Checkout initiated');
-            // Redirect to checkout page or display checkout modal
-        }
-    </script>
 </body>
 </html>
